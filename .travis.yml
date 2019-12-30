@@ -1,0 +1,16 @@
+language: php
+
+php:
+  - 7.2.26
+install:
+    - composer self-update
+    - composer install --no-interaction --prefer-dist --no-suggest
+    - php artisan key:generate
+notifications:
+  email:
+    recipients:
+      - 651353370@gmail.com
+    on_success: always
+    on_failure: always
+
+script: phpunit -c phpunit.xml --coverage-text
