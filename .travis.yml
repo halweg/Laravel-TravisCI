@@ -3,6 +3,7 @@ language: php
 php:
   - 7.2.26
 install:
+    - mv .env.example .env
     - composer self-update
     - composer install --no-interaction --prefer-dist --no-suggest
     - php artisan key:generate
